@@ -10,7 +10,7 @@
             <p><b>   <%= car.model  %></b></p>
             <p><b>   <%= car.year  %></b></p>
             <ul class="nav-links">
-            <li><a href="/cars/`${car_id}`">View</a></li>
+            <li><%= link_to 'View', car_path(car) %></a></li>
             </ul>
           </div>
         </div>
