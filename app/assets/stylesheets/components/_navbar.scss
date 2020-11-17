@@ -1,12 +1,27 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+nav {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ min-height: 8vh;
+ background-color: #DDA0DD;
+ font-family: 'Poppins', sans-serif;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+nav .navbar-collapse {
+ flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+nav .navbar-brand img {
   width: 40px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: px;
+  list-style: none;
+  color: #FFFFD8
 }
