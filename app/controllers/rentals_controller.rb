@@ -10,6 +10,7 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
+    @rental.car = Car.find(params[:car_id])
   end
 
   def create
