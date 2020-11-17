@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   # rental: new create show
 
   resources :cars do
-    resources :rentals, only: [:new, :create]
-    resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+    resources :rentals, only: [:new, :create]``
   end
 
   resources :rentals, only: [:show, :index, :edit, :update, :destroy]
