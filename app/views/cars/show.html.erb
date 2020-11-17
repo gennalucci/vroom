@@ -1,3 +1,14 @@
-<h1><%= @car.make @car.model @car.year %></h1>
+<h1><strong>The Car:</strong>&nbsp;&nbsp;<%= @car.make %>&nbsp;&nbsp;<%= @car.model %>&nbsp;&nbsp;<%= @car.year %></h1>
+<br>
+<br>
 
-<h2><%= @car. %></h2>
+
+<h2><strong>Hosted By:</strong></h2>
+<p><%= @car.user_id %></p>
+
+<h2><strong>Description:</strong></h2>
+<p><%= @car.color %></p>
+<p><%= @car.number_of_seats %>&nbsp;seats</p>
+<p><%= @car.number_of_doors %>&nbsp;doors</p>
+<p><%= @car.mileage %>&nbsp;miles</p>
+
