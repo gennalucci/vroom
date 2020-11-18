@@ -1,9 +1,13 @@
-<h1>Book a new rental for <%= @rental.car.make %> <%= @rental.car.model %></h1>
+<br>
+<h3><center>Book a <%= @rental.car.make %>&nbsp;<%= @rental.car.model %></center></h3>
 
-<%= simple_form_for [@car, @rental] do |f| %>
-  <%= f.input :date_rented %>
-  <%= f.input :date_return %>
-  <%= f.input :owner_approval, :as => :hidden %>
-  <%= f.submit value="Confirm" %>
-<% end %>
+
+<div class="container">
+  <%= simple_form_for([@cars, @rental]) do |f| %>
+    <%= f.input :date_rented %>
+    <%= f.input :date_return %>
+    <%= f.input :owner_approval, :as => :hidden %>
+    <%= f.submit value="Confirm" %>
+  <% end %>
+</div>
 
