@@ -1,12 +1,14 @@
 // Specific CSS for your home-page
+
 .container {
-  width: 900px;
+  width: 1400px;
   margin: auto;
   position: relative;
 }
 
 .card {
   border-radius: 16px;
+  max-width: 400px;
 }
 
 .card-car {
