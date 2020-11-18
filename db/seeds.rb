@@ -11,6 +11,7 @@
   user = User.create!({
     email: Faker::Internet.email,
     password: "Hello123",
+    username: Faker::Internet.username,
   })
   Car.create!({
     user: user,
@@ -22,6 +23,7 @@
     mileage: Faker::Vehicle.mileage,
     available: true,
     color: Faker::Vehicle.color,
+    price_per_day: [30, 40, 50].sample
   })
 end
 
@@ -29,6 +31,7 @@ end
   user = User.create!({
     email: Faker::Internet.email,
     password: "Hello123",
+    username: Faker::Internet.username,
   })
 end
 
