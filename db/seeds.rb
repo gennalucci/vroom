@@ -31,3 +31,5 @@ end
     password: "Hello123",
   })
 end
+
+rentals = Rental.create!({ date_rented: null, date_return: null, car_id: 5, user_id:1})
