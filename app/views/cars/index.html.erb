@@ -1,20 +1,21 @@
 
-<h1>Vroom</h1>
-<p>all the cars!</p>
-<div class="row">
+<br>
+<h2><center>Top Cars in Montreal</center></h2>
+<br>
+<div class="container">
+  <div class="row">
     <% @cars.each do |car| %>
-      <div class="col-sm-4">
-        <div class="card-car">
-          <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c82315a6-ac99-464a-a753-c26bc0fb647d/bvlatuR/std/1200x628/lhd-model-3-social">
-          <div class="card-car-infos">
-            <p><b>   <%= car.make  %></b></p>
-            <p><b>   <%= car.model  %></b></p>
-            <p><b>   <%= car.year  %></b></p>
-            <ul class="nav-links">
-            <li><%= link_to 'View', car_path(car) %></li>
-            </ul>
+      <div class="col">
+        <div class="card">
+          <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c82315a6-ac99-464a-a753-c26bc0fb647d/bvlatuR/std/1200x628/lhd-model-3-social" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h5>
+            <p class="card-text">Description</p>
+            <a><%= link_to 'View', car_path(car) %></a>
           </div>
         </div>
-       <% end %>
       </div>
-    </div>
+    <% end %>
+   </div>
+ </div>
+
