@@ -1,6 +1,7 @@
 <br>
 <h3><center>Book a <%= @rental.car.make %>&nbsp;<%= @rental.car.model %></center></h3>
 
+
 <div class="container">
   <%= simple_form_for([@cars, @rental]) do |f| %>
     <%= f.input :date_rented %>
@@ -9,3 +10,4 @@
     <%= f.submit value="Confirm" %>
   <% end %>
 </div>
+

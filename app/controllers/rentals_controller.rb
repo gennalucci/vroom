@@ -2,6 +2,7 @@ class RentalsController < ApplicationController
 
   def index
     @rentals = Rental.all
+
   end
 
   def show
@@ -10,13 +11,17 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
-    @rental.car = Car.find(params[:car_id])
+    @car = Car.find(params[:car_id])
+    @rental.car = @car
   end
 
   def create
     @rental = Rental.new(rental_params)
+    @car = Car.find(params[:car_id])
+    @rental.car = @car
+    @rental.user = current_user
     @rental.save
-    redirect_to rental_path(@rental)
+    redirect_to rentals_path
   end
 
   def edit

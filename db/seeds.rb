@@ -16,7 +16,7 @@
     user: user,
     make: Faker::Vehicle.manufacture,
     model: Faker::Vehicle.model,
-    year: Faker::PhoneNumber.phone_number,
+    year: rand(1950..2020),
     number_of_doors: Faker::Vehicle.door_count,
     number_of_seats: rand(2..8),
     mileage: Faker::Vehicle.mileage,
@@ -31,3 +31,5 @@ end
     password: "Hello123",
   })
 end
+
+

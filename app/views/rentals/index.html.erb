@@ -1,0 +1,22 @@
+<center><h2><%= current_user.email  %>, here are your current rentals:</h2></center>
+
+
+<% @rentals.each do |rental| %>
+  <div class="container-rental">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-rental-infos">
+      <h2><strong>Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %></h2>
+      <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
+      <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
+      <% if rental.owner_approval == nil %>
+        <p><strong>Owner confirmation: </strong><span style="color: #ff6200">Pending</span></p>
+      <% elsif rental.owner_approval == true %>
+        <p><strong>Owner confirmation: </strong><span style="color: green">Confirmed</span></p>
+      <% else rental.owner_approval == false %>
+        <p><strong>Owner confirmation: </strong><span style="color: red">Rejected</span></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
