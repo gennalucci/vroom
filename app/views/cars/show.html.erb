@@ -1,27 +1,61 @@
-<br>
+<!-- <br>
+<div class="container">
   <div class="row">
-    <div class="card col" style="width: 18rem;">
+    <div class="card col-3" style="width: 18rem;">
       <div class="card-body">
         <h2 class="card-title">Car:</h2>
-        <p><%= @car.make %></p>
-        <p><%= @car.model %></p>
-        <p><%= @car.year %></p>
+        <p>Make:&nbsp;<%= @car.make %></p>
+        <p>Model:&nbsp;<%= @car.model %></p>
+        <p>Year:&nbsp;<%= @car.year %></p>
       </div>
     </div>
-    <div class="card col" style="width: 18rem;">
+    <div class="card col-3 ml-2 mr-2" style="width: 18rem;">
       <div class="card-body">
         <h2 class="card-title">Hosted By:</h2>
-        <p><%= @car.user_id %></p>
+        <p>Name:&nbsp;<%= @car.user %></p>
       </div>
     </div>
-    <div class="card col" style="width: 18rem;">
+    <div class="card col-3" style="width: 18rem;">
       <div class="card-body">
         <h2 class="card-title">Description:</h2>
-        <p><%= @car.color %></p>
-        <p><%= @car.number_of_seats %>&nbsp;seats</p>
-        <p><%= @car.number_of_doors %>&nbsp;doors</p>
-        <p><%= @car.mileage %>&nbsp;miles</p>
-        <a href="#" class="card-link"><%= link_to 'Book Now', new_car_rental_path(@car) %></a>
+        <p>Color:&nbsp;<%= @car.color %></p>
+        <p>Seats:&nbsp;<%= @car.number_of_seats %></p>
+        <p>Doors:&nbsp;<%= @car.number_of_doors %></p>
+        <p>Mileage:&nbsp;<%= @car.mileage %></p>
+        <button type="button" class="btn btn-outline-secondary"><%= link_to 'Book Now', new_car_rental_path(@car) %></button>
       </div>
     </div>
   </div>
+</div> -->
+<br>
+<div class="container">
+  <div class="row">
+    <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
+      <div class="card-header"><strong>Car</strong></div>
+      <div class="card-body">
+        <p class="card-text">Make:&nbsp;<%= @car.make %></p>
+        <p class="card-text">Model:&nbsp;<%= @car.model %></p>
+        <p class="card-text">Year:&nbsp;<%= @car.year %></p>
+      </div>
+    </div>
+    <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
+      <div class="card-header"><strong>Host</strong></div>
+      <div class="card-body">
+        <p class="card-text">Name:&nbsp;<%= @car.user %></p>
+      </div>
+    </div>
+    <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
+      <div class="card-header"><strong>Descripton</strong></div>
+      <div class="card-body">
+        <p class="card-text">Color:&nbsp;<%= @car.color %></p>
+        <p class="card-text">Seats:&nbsp;<%= @car.number_of_seats %></p>
+        <p class="card-text">Doors:&nbsp;<%= @car.number_of_doors %></p>
+        <p class="card-text">Mileage:&nbsp;<%= @car.mileage %></p>
+        <button type="button" class="btn btn-outline-secondary"><%= link_to 'Book Now', new_car_rental_path(@car) %></button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
