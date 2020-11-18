@@ -1,0 +1,4 @@
+<% @rentals.each do |rental| %>
+<p>Pick-up Date:<%= rental.date_rented.to_formatted_s(:long) %> <%= rental.car.make  %> <%= rental.car.model  %></p>
+<p>Return Date<%= rental.date_return.to_formatted_s(:long) %> <%= rental.user.email  %> </p>
+<% end %>
