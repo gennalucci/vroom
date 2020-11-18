@@ -1,0 +1,18 @@
+<br>
+<h1><center>Create a new listing</center></h1>
+<h3><center>Enter car details below</center></h3>
+
+<div class="container">
+  <%= simple_form_for([@car]) do |f| %>
+    <%= f.input :make %>
+    <%= f.input :model %>
+    <%= f.input :year %>
+    <%= f.input :number_of_doors %>
+    <%= f.input :number_of_seats %>
+    <%= f.input :mileage %>
+    <%= f.input :color %>
+    <%= f.input :price_per_day %>
+    <%= f.submit value="Create" %>
+  <% end %>
+</div>
+
