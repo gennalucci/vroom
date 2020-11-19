@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resource :user do
+  resource :users do
+    resources :rentals, only: [:index]
     resources :cars do
       resources :rentals, only: [:index]
     end
