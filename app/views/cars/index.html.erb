@@ -1,10 +1,11 @@
-
 <br>
-<h2><center>Top Cars in Montreal</center></h2>
+<h2><center>View your activity</center></h2>
 <br>
-<div class="container">
-  <div class="row">
-    <% @cars.each do |car| %>
+<div class=“flex-container ">
+  <div class=“flex-child green”>
+    <br>
+    <h4> first </h4>
+    <% @cars.where(user_id: 10).each do |car| %>
         <div class="card col-3 mb-2">
           <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c82315a6-ac99-464a-a753-c26bc0fb647d/bvlatuR/std/1200x628/lhd-model-3-social" class="card-img-top" alt="...">
           <div class="card-body">
@@ -13,6 +14,4 @@
             <button type="button" class="btn btn-outline-secondary"><%= link_to 'View', car_path(car) %></button>
           </div>
         </div>
-    <% end %>
-  </div>
-</div>
+      <% end %>
