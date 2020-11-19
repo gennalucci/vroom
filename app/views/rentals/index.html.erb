@@ -1,7 +1,7 @@
 <br>
 <br>
-<center><h1><%= current_user.email  %></h2></center>
-<center><h1>Here are your current rentals:</h2></center>
+
+<center><h3><%= current_user.username %>, here are your current rentals:</h3></center>
 <br>
 <div class="container">
   <div class="bookings-index-container">
@@ -19,18 +19,22 @@
     </div>
     <div class="bookings-index-right">
       <h4> Pending Approval </h4>
-      <% @cars.each do |car| %>
-        <div class="card col-3 mb-2">
-          <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c82315a6-ac99-464a-a753-c26bc0fb647d/bvlatuR/std/1200x628/lhd-model-3-social" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h5>
-            <p class="card-text">Rate: $ <%= car.price_per_day  %></p>
-            <button type="button" class="btn btn-outline-secondary"><%= link_to 'View', car_path(car) %></button>
+      <% @incoming_rentals.each do |rental| %>
+        <div class="container-rental">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-rental-infos pt-4">
+            <p><strong>Your Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %> </p>
+            <p><strong>Requested by User:</strong> <%= rental.user.username %> </p>
+            <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
+            <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
+            <%= link_to "Approve", accept_rental_path(rental), class: "btn btn-success btn-sm" %>
+            <%= link_to "Reject", decline_rental_path(rental), class: "btn btn-danger btn-sm" %>
           </div>
         </div>
       <% end %>
+
       <h4> My Rentals </h4>
-      <% @rentals.each do |rental| %>
+      <% @outgoing_rentals.each do |rental| %>
         <div class="container-rental">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
           <div class="card-rental-infos">
@@ -50,3 +54,4 @@
     </div>
   </div>
 </div>
+
