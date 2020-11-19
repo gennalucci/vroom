@@ -1,25 +1,52 @@
 <br>
 <br>
-<center><h2><%= current_user.email  %></h2></center>
-<center><h3>Here are your current rentals:</h3></center>
+<center><h1><%= current_user.email  %></h2></center>
+<center><h1>Here are your current rentals:</h2></center>
 <br>
-
-<% @rentals.each do |rental| %>
-  <div class="container-rental">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-rental-infos">
-      <h2><strong>Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %></h2>
-      <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
-      <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
-      <% if rental.owner_approval == nil %>
-        <p><strong>Owner confirmation: </strong><span style="color: #ff6200">Pending</span></p>
-      <% elsif rental.owner_approval == true %>
-        <p><strong>Owner confirmation: </strong><span style="color: green">Confirmed</span></p>
-      <% else rental.owner_approval == false %>
-        <p><strong>Owner confirmation: </strong><span style="color: red">Rejected</span></p>
+<div class="container">
+  <div class="bookings-index-container">
+    <div class="bookings-index-left">
+      <h4> My Listings </h4>
+      <% @cars.each do |car| %>
+        <div class="card-product mb-1">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h2>
+            <p>Rate: $ <%= car.price_per_day  %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="bookings-index-right">
+      <h4> Pending Approval </h4>
+      <% @cars.each do |car| %>
+        <div class="card col-3 mb-2">
+          <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c82315a6-ac99-464a-a753-c26bc0fb647d/bvlatuR/std/1200x628/lhd-model-3-social" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h5>
+            <p class="card-text">Rate: $ <%= car.price_per_day  %></p>
+            <button type="button" class="btn btn-outline-secondary"><%= link_to 'View', car_path(car) %></button>
+          </div>
+        </div>
+      <% end %>
+      <h4> My Rentals </h4>
+      <% @rentals.each do |rental| %>
+        <div class="container-rental">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-rental-infos">
+            <h2><strong>Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %></h2>
+            <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
+            <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
+            <% if rental.owner_approval == nil %>
+              <p><strong>Owner confirmation: </strong><span style="color: #ff6200">Pending</span></p>
+            <% elsif rental.owner_approval == true %>
+              <p><strong>Owner confirmation: </strong><span style="color: green">Confirmed</span></p>
+            <% else rental.owner_approval == false %>
+              <p><strong>Owner confirmation: </strong><span style="color: red">Rejected</span></p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
-<% end %>
-
-
+</div>
