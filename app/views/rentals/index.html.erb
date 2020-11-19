@@ -1,28 +1,57 @@
 <br>
 <br>
+
 <center><h3><%= current_user.username %>, here are your current rentals:</h3></center>
 <br>
+<div class="container">
+  <div class="bookings-index-container">
+    <div class="bookings-index-left">
+      <h4> My Listings </h4>
+      <% @cars.each do |car| %>
+        <div class="card-product mb-1">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h2>
+            <p>Rate: $ <%= car.price_per_day  %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="bookings-index-right">
+      <h4> Pending Approval </h4>
+      <% @incoming_rentals.each do |rental| %>
+        <div class="container-rental">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-rental-infos pt-4">
+            <p><strong>Your Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %> </p>
+            <p><strong>Requested by User:</strong> <%= rental.user.username %> </p>
+            <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
+            <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
+            <%= link_to "Approve", accept_rental_path(rental), class: "btn btn-success btn-sm" %>
+            <%= link_to "Reject", decline_rental_path(rental), class: "btn btn-danger btn-sm" %>
+          </div>
+        </div>
+      <% end %>
 
-<% @rentals.each do |rental| %>
-  <div class="container-rental">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-rental-infos" id="renter">
-      <p><strong>Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %></p>
-      <p><strong>Owned by:</strong> <%= rental.car.user.username %> </p>
-      <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
-      <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
-      <% if rental.owner_approval == nil %>
-        <p><strong>Owner confirmation: </strong><span style="color: #ff6200">Pending</span></p>
-      <% elsif rental.owner_approval == true %>
-        <p><strong>Owner confirmation: </strong><span style="color: green">Confirmed</span></p>
-      <% else rental.owner_approval == false %>
-        <p><strong>Owner confirmation: </strong><span style="color: red">Rejected</span></p>
+      <h4> My Rentals </h4>
+      <% @outgoing_rentals.each do |rental| %>
+        <div class="container-rental">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-rental-infos">
+            <h2><strong>Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %></h2>
+            <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
+            <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
+            <% if rental.owner_approval == nil %>
+              <p><strong>Owner confirmation: </strong><span style="color: #ff6200">Pending</span></p>
+            <% elsif rental.owner_approval == true %>
+              <p><strong>Owner confirmation: </strong><span style="color: green">Confirmed</span></p>
+            <% else rental.owner_approval == false %>
+              <p><strong>Owner confirmation: </strong><span style="color: red">Rejected</span></p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
-<% end %>
-
-
-
-
+</div>
 

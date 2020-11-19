@@ -1,8 +1,10 @@
 class RentalsController < ApplicationController
 
   def index
-    @rentals = Rental.where(user_id: current_user)
-
+    @user = current_user
+    @outgoing_rentals = Rental.where(user: current_user)
+    @cars = Car.where(user_id: current_user)
+    @incoming_rentals = current_user.incoming_rentals.where(owner_approval: nil)
   end
 
   def show
@@ -41,9 +43,6 @@ class RentalsController < ApplicationController
     redirect_to rentals_path
   end
 
-  def pending
-    @rentals = Rental.where(owner_approval: nil)
-  end
 
   def accept
     @rental = Rental.find(params[:id])
