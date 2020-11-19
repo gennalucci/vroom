@@ -9,7 +9,7 @@
           <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/c82315a6-ac99-464a-a753-c26bc0fb647d/bvlatuR/std/1200x628/lhd-model-3-social" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h5>
-            <p class="card-text">Rate: $<%= car.price_per_day  %></p>
+            <p class="card-text">Rate: $ <%= car.price_per_day  %></p>
             <button type="button" class="btn btn-outline-secondary"><%= link_to 'View', car_path(car) %></button>
           </div>
         </div>
