@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # has_many :cars through: :rentals
   has_many :cars
   has_many :rented_cars, through: :rentals, source: :car
+  has_many :incoming_rentals, through: :cars, source: :rentals
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end

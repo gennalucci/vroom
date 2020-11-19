@@ -14,5 +14,8 @@ Rails.application.routes.draw do
 
   resources :rentals, only: [:show, :index, :edit, :update, :destroy]
 
+  get '/test', to: 'rentals#pending'
+  get '/rentals/:id/accept', to: 'rentals#accept', as: :accept_rental
+  get '/rentals/:id/decline', to: 'rentals#decline', as: :decline_rental
 
 end
