@@ -1,32 +1,4 @@
-<!-- <br>
-<div class="container">
-  <div class="row">
-    <div class="card col-3" style="width: 18rem;">
-      <div class="card-body">
-        <h2 class="card-title">Car:</h2>
-        <p>Make:&nbsp;<%= @car.make %></p>
-        <p>Model:&nbsp;<%= @car.model %></p>
-        <p>Year:&nbsp;<%= @car.year %></p>
-      </div>
-    </div>
-    <div class="card col-3 ml-2 mr-2" style="width: 18rem;">
-      <div class="card-body">
-        <h2 class="card-title">Hosted By:</h2>
-        <p>Name:&nbsp;<%= @car.user %></p>
-      </div>
-    </div>
-    <div class="card col-3" style="width: 18rem;">
-      <div class="card-body">
-        <h2 class="card-title">Description:</h2>
-        <p>Color:&nbsp;<%= @car.color %></p>
-        <p>Seats:&nbsp;<%= @car.number_of_seats %></p>
-        <p>Doors:&nbsp;<%= @car.number_of_doors %></p>
-        <p>Mileage:&nbsp;<%= @car.mileage %></p>
-        <button type="button" class="btn btn-outline-secondary"><%= link_to 'Book Now', new_car_rental_path(@car) %></button>
-      </div>
-    </div>
-  </div>
-</div> -->
+
 <br>
 <div class="container">
   <div class="row">
@@ -41,7 +13,7 @@
     <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
       <div class="card-header"><strong>Host</strong></div>
       <div class="card-body">
-        <p class="card-text">Name:&nbsp;<%= @car.user_id %></p>
+        <p class="card-text">Name:&nbsp;<%= @car.user.email %></p>
       </div>
     </div>
     <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
