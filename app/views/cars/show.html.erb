@@ -1,6 +1,6 @@
 
 <br>
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
       <img src=<%= @car.url %> class="card-img-top" alt="..."/>
@@ -28,6 +28,36 @@
     </div>
   </div>
 </div>
-<br>
+<br> -->
+  <div class="row">
+    <div class="row">
+      <div class="card">
+        <div class="card-img" style="background-image:url(<%= @car.url %>);">
+          <div class="overlay">
+            <div class="overlay-content">
+            </div>
+          </div>
+        </div>
 
+        <div class="card-content">
+          <p><strong><%= @car.make %>&nbsp;&nbsp;<%= @car.model %>&nbsp;&nbsp;<%= @car.year %></strong></p>
+          <p>Rate: $<%= @car.price_per_day %></p>
+        </div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="card">
+        <div class="card-img" style="background-image:url(<%= @car.user.url %>);">
+          <div class="overlay">
+            <div class="overlay-content">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <p>Name: <%= @car.user.username %></p>
+        </div>
+      </div>
+    </div>
+  </div>

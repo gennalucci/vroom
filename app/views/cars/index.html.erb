@@ -2,19 +2,23 @@
 <br>
 <h2><center>Top Cars in Montreal</center></h2>
 <br>
-<div class="container">
-  <br>
   <div class="row">
     <% @cars.each do |car| %>
-        <div class="card col-3 mb-2">
-          <img src=<%= car.url %> class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-title"><strong><%= car.make  %>&nbsp;&nbsp;<%= car.model %>&nbsp;&nbsp;<%= car.year %></strong></p>
-            <p class="card-text">Rate: $<%= car.price_per_day %></p>
-            <button type="button" class="btn btn-outline-secondary"><%= link_to 'View', car_path(car) %></button>
+      <div class="card">
+        <div class="card-img" style="background-image:url(<%= car.url %>);">
+          <div class="overlay">
+            <div class="overlay-content">
+              <%= link_to "View", car_path(car), class: "hover" %>
+            </div>
           </div>
         </div>
+
+        <div class="card-content">
+          <%= link_to car_path(car) do %>
+            <p><strong><%= car.make %>&nbsp;&nbsp;<%= car.model %>&nbsp;&nbsp;<%= car.year %></strong></p>
+            <p>Rate: $<%= car.price_per_day %></p>
+          <%end%>
+        </div>
+      </div>
     <% end %>
   </div>
-</div>
-
