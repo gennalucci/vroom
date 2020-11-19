@@ -1,7 +1,7 @@
 class RentalsController < ApplicationController
 
   def index
-    @rentals = Rental.all
+    @rentals = Rental.where(user_id: current_user)
 
   end
 
@@ -39,6 +39,24 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
     @rental.destroy
     redirect_to rentals_path
+  end
+
+  def pending
+    @rentals = Rental.where(owner_approval: nil)
+  end
+
+  def accept
+    @rental = Rental.find(params[:id])
+    @rental.owner_approval = true
+    @rental.save
+    redirect_to test_path
+  end
+
+  def decline
+    raise
+    @rental = Rental.find(params[:id])
+    @rental.owner_approval = false
+    @rental.save
   end
 
   private

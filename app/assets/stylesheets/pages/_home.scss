@@ -61,7 +61,7 @@ h2 {
 
 .container-rental {
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -72,6 +72,21 @@ h2 {
   margin-bottom: 16px;
   border-radius: 8px;
 }
+
+.container-rental-owner {
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 450px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
 
 .container-rental img {
   height: 100%;
@@ -91,12 +106,14 @@ h2 {
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+
 }
 
 .container-rental .card-rental-infos {
   padding: 16px;
   margin: auto;
   position: relative
+
 }
 
 .fullscreen {
