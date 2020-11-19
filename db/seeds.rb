@@ -65,13 +65,13 @@ pic_index = 0
     make: Faker::Vehicle.manufacture,
     model: Faker::Vehicle.model,
     year: rand(1950..2020),
-    number_of_doors: Faker::Vehicle.door_count,
+    number_of_doors: [2, 4, 6].sample,
     number_of_seats: rand(2..8),
     mileage: Faker::Vehicle.mileage,
     available: true,
     url: cloudinary_urls[car_index += 1],
     color: Faker::Vehicle.color,
-    price_per_day: [30, 40, 50].sample
+    price_per_day: [150, 300, 500, 800].sample
   })
 end
 
