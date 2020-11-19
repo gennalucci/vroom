@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  resource :user do
+    resources :cars do
+      resources :rentals, only: [:index]
+    end
+  end
+
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
