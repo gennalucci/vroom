@@ -1,11 +1,11 @@
 <div class="header">
-<h3> <strong>Manage your rentals</strong></h3></center>
+<h3> <strong>DASHBOARD</strong></h3></center>
 </div>
 <br>
 <div class="container">
   <div class="bookings-index-container">
     <div class="bookings-index-left mr-5">
-      <div class="header">
+      <div class="header-2">
       <h4><strong> My Listings </strong></h4>
       </div>
          <% @cars.each do |car| %>
@@ -28,26 +28,35 @@
     <% end %>
     </div>
     <div class="bookings-index-right">
-      <div class="header">
-      <h4> Pending Approval </h4>
+      <div class="header-2">
+        <h4> Pending Approval </h4>
       </div>
-      <% @incoming_rentals.each do |rental| %>
-        <div class="container-rental">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-rental-infos pt-4">
-            <p><strong>Your Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %> </p>
-            <p><strong>Requested by User:</strong> <%= rental.user.username %> </p>
-            <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
-            <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
-            <%= link_to "Approve", accept_rental_path(rental), class: "btn btn-success btn-sm" %>
-            <%= link_to "Reject", decline_rental_path(rental), class: "btn btn-danger btn-sm" %>
-          </div>
+      <%if @incoming_rentals.length == 0%>
+        <div class="container-nill">
+          <img src="https://www.colourbox.com/preview/4665046-no-car-sign.jpg" >
+          <div class="card-nill-infos pt-4">
+          <p><strong>No rental requests</strong></p>
         </div>
-      <% end %>
-
-        <div class="header">
-        <h4> My Rentals </h4>
-      </div>
+        </div>
+      <% else %>
+        <p>test</p>
+        <% @incoming_rentals.each do |rental| %>
+          <div class="container-rental">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-rental-infos pt-4">
+              <p><strong>Your Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %> </p>
+              <p><strong>Requested by User:</strong> <%= rental.user.username %> </p>
+              <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
+              <p><strong>Return Date:</strong> <%= rental.date_return.to_formatted_s(:long) %> </p>
+              <%= link_to "Approve", accept_rental_path(rental), class: "btn btn-success btn-sm" %>
+              <%= link_to "Reject", decline_rental_path(rental), class: "btn btn-danger btn-sm" %>
+            </div>
+          </div>
+        <% end %>
+      <%end%>
+        <div class="header-2">
+          <h4> My Rentals </h4>
+        </div>
       <% @outgoing_rentals.each do |rental| %>
         <div class="container-rental">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
