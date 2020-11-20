@@ -1,63 +1,80 @@
+<html>
+  <head>
+<!-- Font Awesome Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<br>
-<!-- <div class="container">
-  <div class="row">
-    <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
-      <img src=<%= @car.url %> class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <p class="card-text">Make:&nbsp;<%= @car.make %></p>
-        <p class="card-text">Model:&nbsp;<%= @car.model %></p>
-        <p class="card-text">Year:&nbsp;<%= @car.year %></p>
-      </div>
-    </div>
-    <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
-      <img src=<%= @car.user.url %> class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <p class="card-text">Name:&nbsp;<%= @car.user.username %></p>
-      </div>
-    </div>
-    <div class="card col-3 border-secondary mb-3" style="max-width: 24rem;">
-      <div class="card-header"><strong>Descripton</strong></div>
-      <div class="card-body">
-        <p class="card-text">Color:&nbsp;<%= @car.color %></p>
-        <p class="card-text">Seats:&nbsp;<%= @car.number_of_seats %></p>
-        <p class="card-text">Doors:&nbsp;<%= @car.number_of_doors %></p>
-        <p class="card-text">Mileage:&nbsp;<%= @car.mileage %></p>
-        <button type="button" class="btn btn-outline-secondary"><%= link_to 'Book Now', new_car_rental_path(@car) %></button>
-      </div>
-    </div>
-  </div>
-</div>
-<br> -->
-  <div class="row">
-    <div class="row">
-      <div class="card">
-        <div class="card-img" style="background-image:url(<%= @car.url %>);">
-          <div class="overlay">
-            <div class="overlay-content">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="card">
+          <div class="card-img" style="background-image:url(<%= @car.url %>);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div>
+              <span style="margin: 12px;"><strong>Make:</strong> <%= @car.make %></span>
+              <span style="margin: 12px;"><strong>Model:</strong> <%= @car.model %></span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Year:</strong> <%= @car.year %></span>
+              <span style="margin: 12px;"><strong>Price:</strong> $<%= @car.price_per_day %></span>
             </div>
           </div>
         </div>
 
-        <div class="card-content">
-          <p><strong><%= @car.make %>&nbsp;&nbsp;<%= @car.model %>&nbsp;&nbsp;<%= @car.year %></strong></p>
-          <p>Rate: $<%= @car.price_per_day %></p>
-        </div>
-      </div>
-    </div>
+        <div class="card">
+          <div class="card-img" style="background-image:url(<%= @car.user.url %>);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
 
-    <div class="row">
-      <div class="card">
-        <div class="card-img" style="background-image:url(<%= @car.user.url %>);">
-          <div class="overlay">
-            <div class="overlay-content">
+          <div class="card-content">
+            <div>
+              <span style="margin: 10px;"><strong>Name:</strong> <%= @car.user.username.capitalize %></span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 10px;"><strong>Star Rating:&nbsp;</span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
             </div>
           </div>
         </div>
 
-        <div class="card-content">
-          <p>Name: <%= @car.user.username %></p>
+        <div class="card">
+          <div class="card-img" style="background-image:url(https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605832988/Exotic%20Cars/User%20Faces/interior_car_tmxdbd.jpg);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
+
+          <div class="card-content">
+            <div>
+              <span style="margin: 10px;">Color: <%= @car.color %></span>
+              <span style="margin: 10px;">Seats: <%= @car.number_of_seats %></span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 10px;">Doors: <%= @car.number_of_doors %></span>
+              <span style="margin: 10px;">Mileage: <%= @car.mileage %></span>
+            </div>
+            <br>
+            <button type="button" class="btn btn-outline-secondary" style="margin-left: 55px;"><%= link_to 'Book Now', new_car_rental_path(@car) %></button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </body>
+</html>
