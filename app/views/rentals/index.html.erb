@@ -30,13 +30,12 @@
       </div>
       <%if @incoming_rentals.length == 0%>
         <div class="container-nill">
-          <img src="https://www.colourbox.com/preview/4665046-no-car-sign.jpg" >
+          <img src="https://previews.123rf.com/images/keltmd/keltmd1709/keltmd170900573/86958540-comic-speech-bubble-with-expression-text-oops-comic-speech-bubble-black-simple-silhouette-vector-ill.jpg" >
           <div class="card-nill-infos pt-4">
           <p><strong>No rental requests</strong></p>
         </div>
         </div>
       <% else %>
-        <p>test</p>
         <% @incoming_rentals.each do |rental| %>
           <div class="container-rental">
             <img src="https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807889/Exotic%20Cars/lambo_db1xsb.png" />
@@ -54,6 +53,15 @@
         <div class="header-2">
           <h4> My Rentals </h4>
         </div>
+        <%if @outgoing_rentals.length == 0%>
+        <div class="container-nill">
+          <img src="https://previews.123rf.com/images/keltmd/keltmd1709/keltmd170900573/86958540-comic-speech-bubble-with-expression-text-oops-comic-speech-bubble-black-simple-silhouette-vector-ill.jpg" >
+          <div class="card-nill-infos pt-4">
+          <span><strong>No rental requests</strong></span>
+          <span><strong> ..make one? </strong></span>
+          <%= link_to "Browse cars", cars_path, class: "btn btn-success" %>
+
+          <%else%>
       <% @outgoing_rentals.each do |rental| %>
         <div class="container-rental">
           <img src="https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807889/Exotic%20Cars/rezvani-tank_i4bhhx.jpg" />
@@ -70,6 +78,7 @@
             <% end %>
           </div>
         </div>
+      <% end %>
       <% end %>
     </div>
   </div>
