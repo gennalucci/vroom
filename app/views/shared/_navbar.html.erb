@@ -24,7 +24,7 @@
          <% if user_signed_in? %>
 
             <li class="nav-item mr-2">
-               <p class="nav-link no-margin">Welcome, <%= current_user.username %></p>
+               <p class="nav-link no-margin">Welcome, <%= current_user.username.capitalize %></p>
             </li>
             <li class="nav-item mr-2">
                <p class="nav-link no-margin"><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-dark nav-item mr-2", id: "btn-account", method: :delete %></p>
