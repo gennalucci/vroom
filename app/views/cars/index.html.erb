@@ -1,8 +1,11 @@
 
 <br>
-<h2><center>Top Cars in Montreal</center></h2>
+<div class="header">
+<h2><strong> Top cars in Montreal </strong></h2>
+</div>
 <br>
-  <div class="row">
+
+  <div class="row ml-4">
     <% @cars.each do |car| %>
       <div class="card">
         <div class="card-img" style="background-image:url(<%= car.url %>);">
