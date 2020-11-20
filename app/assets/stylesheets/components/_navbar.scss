@@ -25,11 +25,19 @@
 //   font-weight: bold;
 //   font-size: px;
 //   list-style: none;
+// }
 
+.navbar-nav {
+  align-items: center;
+}
+
+.no-margin{
+margin: 0px;
+}
 
 .navbar-lewagon {
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   color: #ccb65e;
   top: 0px;
   width: 100%;
@@ -42,20 +50,8 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+  width: 32px;
 
-.btn-flat {
-  color: white;
-  padding: 0px 0px;
-  border-radius: 4px;
-  background: #ccb65e;
-  transition: background 0.3s ease;
-}
-
-.btn-flat:hover {
-  background: #ccb65e;
-  color: white;
 }
 
 .search-bar {
@@ -79,24 +75,6 @@
  color: black;
 }
 
-.search-btn {
- color: #e84118;
- float: right;
- width: 40px;
- height: 40px;
- border-radius: 50%;
- background: #2f3640;
- display: flex;
- justify-content: center;
- align-items: center;
- transition: 0.4s;
- color: white;
- cursor: pointer;
-}
-
-.search-btn > i {
- font-size: 30px;
-}
 
 .search-txt {
  border: none;
@@ -111,3 +89,15 @@
  width: 0px;
  font-weight: bold;
 }
+.nav-item {
+  font-weight: bold;
+  font-size: 16px;
+  color: #C9D1E1;
+
+}
+
+#vroomi{
+  font-size: 16px;
+
+}
+

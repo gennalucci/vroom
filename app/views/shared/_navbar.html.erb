@@ -1,0 +1,53 @@
+
+
+        <!-- <form class="pure-form">
+          <input type="text" class="pure-input-rounded" />
+          <button type="submit" class="pure-button">Search</button>
+        </form> -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="main-nav">
+   <a class="navbar-brand" href="/cars" id="vroomi"><strong>VROOMi</strong></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse form-inline" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+         <li class="nav-item mr-2">
+            <p class="nav-link no-margin"><%= link_to "Home", "/cars", class: "nav-link" %></p>
+         </li>
+         <li class="nav-item mr-2">
+            <p class="nav-link no-margin"><%= link_to "My Dashboard", "/rentals", class: "nav-link" %></p>
+         </li>
+         <li class="nav-item mr-2">
+            <p class="nav-link no-margin"><%= link_to "New Listing", '/cars/new', class: "nav-link" %></p>
+          </li>
+
+         <% if user_signed_in? %>
+
+            <li class="nav-item mr-2">
+               <p class="nav-link no-margin">Welcome, <%= current_user.username %></p>
+            </li>
+            <li class="nav-item mr-2">
+               <p class="nav-link no-margin"><%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-dark nav-item mr-2", id: "btn-account", method: :delete %></p>
+            </li>
+            <li class="nav-item">
+              <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/2/25/Seal_of_the_Central_Intelligence_Agency.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Action", "#", class: "dropdown-item" %>
+                <%= link_to "Another action", "#", class: "dropdown-item" %>
+            </li>
+         </div>
+         <% else %>
+
+            <li class="nav-item">
+               <p class="nav-link"><%= link_to "Sign in", new_user_session_path, class: "btn btn-dark nav-item mr-2", id: "btn-account" %></p>
+            </li>
+            <li>
+               <p class="nav-link"><%= link_to "Register", new_user_registration_path, class: "btn btn-dark nav-item mr-2", id: "btn-account" %></p>
+            </li>
+
+         <% end %>
+      </ul>
+      </ul>
+   </div>
+</div>
+</div>

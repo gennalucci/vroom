@@ -52,7 +52,6 @@ class RentalsController < ApplicationController
   end
 
   def decline
-    raise
     @rental = Rental.find(params[:id])
     @rental.owner_approval = false
     @rental.save

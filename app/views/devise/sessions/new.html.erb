@@ -1,5 +1,5 @@
 
-<div class="container mt-5">
+<div class="container" id="sign-in-cont">
   <div class="row">
     <div class="col-6 offset-3">
       <h2>Log in and Vroom!</h2>
@@ -16,8 +16,8 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
-        <div class="form-actions btn-login">
-          <%= f.button :submit, "Log in" %>
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "btn btn-dark nav-item mr-2", id: "btn-account" %>
         </div>
       <% end %>
 
