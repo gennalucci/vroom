@@ -4,9 +4,9 @@
   </head>
   <body>
     <br>
-    <h2 style="margin-left: 165px;"><strong>Details</strong></h2>
+    <h2 class="text-center"><strong>Details</strong></h2>
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="card">
           <div class="card-img" style="background-image:url(<%= @car.url %>);">
             <div class="overlay">
@@ -78,9 +78,9 @@
       </div>
     </div>
 <br>
-    <h2 style="margin-left: 165px;"><strong>More cars from <%= @car.user.username.capitalize %></strong></h2>
+    <h2 class="text-center"><strong>More cars from <%= @car.user.username.capitalize %></strong></h2>
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="card">
           <div class="card-img" style="background-image:url(https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807889/Exotic%20Cars/Lambo-SUV_deybew.jpg);">
             <div class="overlay">

@@ -1,5 +1,7 @@
 .bookings-index-container {
   display: flex;
+  align-items: flex-start;
+  align-content: center;
   margin-bottom: 8px;
 }
 
@@ -9,7 +11,6 @@
   // box-shadow: 0 0 15px black;
   margin-right: 5px;
   background-color: #355C7C;
-  margin-right: 5px;
 
 }
 
@@ -26,6 +27,22 @@
   margin-top: 7px;
   margin-left: 40px;
   margin-right: 40px;
+  margin-bottom: 8px;
+  padding: 5px;
+  box-shadow: 0 0 15px black;
+  font-style: "Bebas Neue";
+  font-style: bold;
+  text-align: center;
+  background: #ccb65e;
+  color: #355C7C;
+  font-size: 15px;
+  font-family: "Work Sans";
+}
+
+.header-2 {
+  margin-top: 7px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 8px;
   padding: 5px;
   box-shadow: 0 0 15px black;

@@ -44,11 +44,15 @@ class RentalsController < ApplicationController
   end
 
 
+  def pending
+    @rental = Rental.where(:owner_approval == nil)
+  end
+
   def accept
     @rental = Rental.find(params[:id])
     @rental.owner_approval = true
     @rental.save
-    redirect_to test_path
+    redirect_to rentals_path
   end
 
   def decline

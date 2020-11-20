@@ -1,10 +1,10 @@
 
-<div class="header">
-<h2><strong> Top cars in Montreal </strong></h2>
-</div>
+
+<br>
+<h2 class="text-center"><strong>Trending Cars in Montreal</strong></h2>
 <br>
 
-  <div class="row ml-4">
+  <div class="row justify-content-center">
     <% @cars.each do |car| %>
       <div class="card">
         <div class="card-img" style="background-image:url(<%= car.url %>);">

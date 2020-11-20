@@ -54,6 +54,55 @@
 // .card-car .card-car-infos {
 //   padding: 16px;
 // }
+.container-nill {
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 450px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.container-nill img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.container-nill h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.container-nill p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.container-nill p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+
+}
+
+.container-nill .card-nill-infos {
+  padding: 16px;
+  margin: auto;
+  position: relative;
+
+}
 
 .container-rental {
   overflow: hidden;
@@ -108,7 +157,7 @@
 .container-rental .card-rental-infos {
   padding: 16px;
   margin: auto;
-  position: relative
+  position: relative;
 
 }
 
@@ -116,7 +165,6 @@
 
   width: 100vw;
   height: 100vh;
-
   object-fit: cover;
   position: relative;
   // position: fixed;
