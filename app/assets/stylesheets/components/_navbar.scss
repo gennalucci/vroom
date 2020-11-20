@@ -1,28 +1,113 @@
-nav {
- display: flex;
- justify-content: space-around;
- align-items: center;
- min-height: 8vh;
- background-color: #DDA0DD;
- font-family: 'Poppins', sans-serif;
+// nav {
+//  width: 100%;
+//  position: fixed;
+//  justify-content: space-around;
+//  align-items: center;
+//  min-height: 6vh;
+//  background-color: #DDA0DD;
+//  font-family: 'Poppins', sans-serif;
+//  margin-top: 0px;
+// }
+
+// nav .navbar-collapse {
+//  flex-grow: 0;
+// }
+
+// nav .navbar-brand img {
+//   width: 40px;
+// }
+
+// .nav-links {
+//   display: flex;
+//   justify-content: space-around;
+//   width: 20%;
+//   text-decoration: none;
+//   font-weight: bold;
+//   font-size: px;
+//   list-style: none;
+
+
+.navbar-lewagon {
+  justify-content: space-between;
+  position: fixed;
+  color: #ccb65e;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+  background: #6790B6;
 }
 
-nav .navbar-collapse {
- flex-grow: 0;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
-nav .navbar-brand img {
+.navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  width: 20%;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: px;
-  list-style: none;
-  color: #FFFFD8
+.btn-flat {
+  color: white;
+  padding: 0px 0px;
+  border-radius: 4px;
+  background: #ccb65e;
+  transition: background 0.3s ease;
 }
 
+.btn-flat:hover {
+  background: #ccb65e;
+  color: white;
+}
+
+.search-bar {
+ // position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background: #2f3640;
+ height: 40px;
+ border-radius: 40px;
+ padding: 10px;
+}
+
+.search-bar:hover > .search-txt {
+ width: 240px;
+ padding: 0 6px;
+}
+
+.search-bar:hover > .search-btn {
+ background: white;
+ color: black;
+}
+
+.search-btn {
+ color: #e84118;
+ float: right;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background: #2f3640;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ transition: 0.4s;
+ color: white;
+ cursor: pointer;
+}
+
+.search-btn > i {
+ font-size: 30px;
+}
+
+.search-txt {
+ border: none;
+ background: none;
+ outline: none;
+ float: left;
+ padding: 0;
+ color: white;
+ font-size: 16px;
+ transition: 0.4s;
+ line-height: 40px;
+ width: 0px;
+ font-weight: bold;
+}

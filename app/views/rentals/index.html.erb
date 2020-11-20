@@ -1,24 +1,36 @@
-<br>
-<br>
-
-<center><h3><%= current_user.username %>, here are your current rentals:</h3></center>
+<div class="header">
+<h3> <strong>Manage your rentals</strong></h3></center>
+</div>
 <br>
 <div class="container">
   <div class="bookings-index-container">
-    <div class="bookings-index-left">
-      <h4> My Listings </h4>
-      <% @cars.each do |car| %>
-        <div class="card-product mb-1">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2><%= car.make  %>&nbsp;&nbsp;<%= car.model  %>&nbsp;&nbsp;<%= car.year  %></h2>
-            <p>Rate: $ <%= car.price_per_day  %></p>
+    <div class="bookings-index-left mr-5">
+      <div class="header">
+      <h4><strong> My Listings </strong></h4>
+      </div>
+         <% @cars.each do |car| %>
+      <div class="card ml-5">
+        <div class="card-img" style="background-image:url(<%= car.url %>);">
+          <div class="overlay">
+            <div class="overlay-content">
+              <%= link_to "View", car_path(car), class: "hover" %>
+            </div>
           </div>
         </div>
-      <% end %>
+
+        <div class="card-content">
+          <%= link_to car_path(car) do %>
+            <p><strong><%= car.make %>&nbsp;&nbsp;<%= car.model %>&nbsp;&nbsp;<%= car.year %></strong></p>
+            <p>Rate: $<%= car.price_per_day %></p>
+          <%end%>
+        </div>
+      </div>
+    <% end %>
     </div>
     <div class="bookings-index-right">
+      <div class="header">
       <h4> Pending Approval </h4>
+      </div>
       <% @incoming_rentals.each do |rental| %>
         <div class="container-rental">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
@@ -33,7 +45,9 @@
         </div>
       <% end %>
 
-      <h4> My Rentals </h4>
+        <div class="header">
+        <h4> My Rentals </h4>
+      </div>
       <% @outgoing_rentals.each do |rental| %>
         <div class="container-rental">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
@@ -54,4 +68,3 @@
     </div>
   </div>
 </div>
-
