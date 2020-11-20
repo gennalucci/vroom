@@ -1,6 +1,5 @@
-<div class="header">
-<h3> <strong>Manage your rentals</strong></h3></center>
-</div>
+<br>
+<h3 class="text-center"><strong>Manage Your Rentals</strong></h3>
 <br>
 <div class="container">
   <div class="bookings-index-container">
@@ -8,32 +7,30 @@
       <div class="header">
       <h4><strong> My Listings </strong></h4>
       </div>
-         <% @cars.each do |car| %>
-      <div class="card ml-5">
-        <div class="card-img" style="background-image:url(<%= car.url %>);">
-          <div class="overlay">
-            <div class="overlay-content">
-              <%= link_to "View", car_path(car), class: "hover" %>
-            </div>
+      <div class="container-rental">
+        <img src="https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605808279/Exotic%20Cars/Alfa-Romeo-Tipo_yivwva.jpg"/>
+        <div class="card-rental-infos pt-4">
+          <h5><strong>Porsche&nbsp;&nbsp;911</strong></h5>
+          <div>
+            <span><strong>Doors: 2</strong></span>
+            <span style="margin-left: 10px;"><strong>Seats: 4</strong></span>
+          </div>
+          <div>
+            <span><strong>Year: 2021</strong></span>
+            <br>
+            <span><strong>Rate: $400</strong></span>
           </div>
         </div>
-
-        <div class="card-content">
-          <%= link_to car_path(car) do %>
-            <p><strong><%= car.make %>&nbsp;&nbsp;<%= car.model %>&nbsp;&nbsp;<%= car.year %></strong></p>
-            <p>Rate: $<%= car.price_per_day %></p>
-          <%end%>
-        </div>
       </div>
-    <% end %>
     </div>
+
     <div class="bookings-index-right">
       <div class="header">
-      <h4> Pending Approval </h4>
+      <h4>Pending Approval</h4>
       </div>
       <% @incoming_rentals.each do |rental| %>
         <div class="container-rental">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <img src="https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807889/Exotic%20Cars/lambo_db1xsb.png" />
           <div class="card-rental-infos pt-4">
             <p><strong>Your Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %> </p>
             <p><strong>Requested by User:</strong> <%= rental.user.username %> </p>
@@ -50,7 +47,7 @@
       </div>
       <% @outgoing_rentals.each do |rental| %>
         <div class="container-rental">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <img src="https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807889/Exotic%20Cars/rezvani-tank_i4bhhx.jpg" />
           <div class="card-rental-infos">
             <h2><strong>Vehicle:</strong> <%= rental.car.make  %> <%= rental.car.model  %></h2>
             <p><strong>Pick-up Date:</strong> <%= rental.date_rented.to_formatted_s(:long) %> </p>
