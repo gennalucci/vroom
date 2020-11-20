@@ -4,8 +4,8 @@
 
 <div class="container">
   <%= simple_form_for([@car, @rental]) do |f| %>
-    <%= f.input :date_rented %>
-    <%= f.input :date_return %>
+    <%= f.input :date_rented, html5: true %>
+    <%= f.input :date_return, html5: true %>
     <%= f.input :owner_approval, :as => :hidden %>
     <%= f.submit value="Confirm" %>
   <% end %>
