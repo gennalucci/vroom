@@ -1,7 +1,7 @@
 
+
 <br>
 <h2 class="text-center"><strong>Trending Cars in Montreal</strong></h2>
-</div>
 <br>
 
   <div class="row justify-content-center">
@@ -18,7 +18,7 @@
         <div class="card-content">
           <%= link_to car_path(car) do %>
             <p><strong><%= car.make %>&nbsp;&nbsp;<%= car.model %>&nbsp;&nbsp;<%= car.year %></strong></p>
-            <p>Rate: $<%= car.price_per_day %></p>
+            <p>Rate: $<%= car.price_per_day %>/day</p>
           <%end%>
         </div>
       </div>
