@@ -1,8 +1,6 @@
 <html>
   <head>
-<!-- Font Awesome Icon Library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   </head>
   <body>
     <div class="container">
@@ -14,10 +12,12 @@
               </div>
             </div>
           </div>
-
           <div class="card-content">
             <div>
               <span style="margin: 12px;"><strong>Make:</strong> <%= @car.make %></span>
+            </div>
+            <br>
+            <div>
               <span style="margin: 12px;"><strong>Model:</strong> <%= @car.model %></span>
             </div>
             <br>
@@ -27,31 +27,6 @@
             </div>
           </div>
         </div>
-
-        <div class="card">
-          <div class="card-img" style="background-image:url(<%= @car.user.url %>);">
-            <div class="overlay">
-              <div class="overlay-content">
-              </div>
-            </div>
-          </div>
-
-          <div class="card-content">
-            <div>
-              <span style="margin: 10px;"><strong>Name:</strong> <%= @car.user.username.capitalize %></span>
-            </div>
-            <br>
-            <div>
-              <span style="margin: 10px;"><strong>Star Rating:&nbsp;</span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-            </div>
-          </div>
-        </div>
-
         <div class="card">
           <div class="card-img" style="background-image:url(https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605832988/Exotic%20Cars/User%20Faces/interior_car_tmxdbd.jpg);">
             <div class="overlay">
@@ -59,20 +34,117 @@
               </div>
             </div>
           </div>
-
           <div class="card-content">
             <div>
-              <span style="margin: 10px;">Color: <%= @car.color %></span>
-              <span style="margin: 10px;">Seats: <%= @car.number_of_seats %></span>
+              <span style="margin: 10px;"><strong>Color:</strong> <%= @car.color %></span>
+              <span style="margin: 10px;"><strong>Seats:</strong> <%= @car.number_of_seats %></span>
             </div>
             <br>
             <div>
-              <span style="margin: 10px;">Doors: <%= @car.number_of_doors %></span>
-              <span style="margin: 10px;">Mileage: <%= @car.mileage %></span>
+              <span style="margin: 10px;"><strong>Doors:</strong> <%= @car.number_of_doors %></span>
+              <span style="margin: 10px;"><strong>Mileage:</strong> <%= @car.mileage %></span>
             </div>
             <br>
             <button type="button" class="btn btn-outline-secondary" style="margin-left: 55px;"><%= link_to 'Book Now', new_car_rental_path(@car) %></button>
           </div>
+        </div>
+        <div class="card">
+          <div class="card-img" style="background-image:url(<%= @car.user.url %>);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <div>
+              <span style="margin: 10px;"><strong>Owner:</strong> <%= @car.user.username.capitalize %></span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 10px;"><strong>Star Rating:&nbsp;</span>
+            </div>
+            <div style="margin: 10px;">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span>(38)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+    <h2 style="margin-left: 165px;"><strong>More cars from <%= @car.user.username.capitalize %></strong></h2>
+    <div class="container">
+      <div class="row">
+        <div class="card">
+          <div class="card-img" style="background-image:url(https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807889/Exotic%20Cars/Lambo-SUV_deybew.jpg);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <div>
+              <span style="margin: 12px;"><strong>Make:</strong> Lamborghini</span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Model:</strong> Urus</span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Year:</strong> 2020</span>
+              <span style="margin: 12px;"><strong>Price:</strong> $1000</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" style="background-image:url(https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807888/Exotic%20Cars/bugatti_tmzx0m.jpg);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <div>
+              <span style="margin: 12px;"><strong>Make:</strong> Bugatti</span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Model:</strong> Chiron</span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Year:</strong> 2019</span>
+              <span style="margin: 12px;"><strong>Price:</strong> $1500</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" style="background-image:url(https://res.cloudinary.com/dl6q8gfk9/image/upload/v1605807888/Exotic%20Cars/audi-r8-onlocation_gn9i1l.jpg);">
+            <div class="overlay">
+              <div class="overlay-content">
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <div>
+              <span style="margin: 12px;"><strong>Make:</strong> Audi</span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Model:</strong> R8 V10</span>
+            </div>
+            <br>
+            <div>
+              <span style="margin: 12px;"><strong>Year:</strong> 2020</span>
+              <span style="margin: 12px;"><strong>Price:</strong> $750</span>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
