@@ -71,7 +71,7 @@ pic_index = 0
     available: true,
     url: cloudinary_urls[car_index += 1],
     color: Faker::Vehicle.color,
-    price_per_day: [150, 300, 500, 800].sample
+    price_per_day: [750, 1000, 1500, 2000].sample
   })
 end
 
